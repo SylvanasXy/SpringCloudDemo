@@ -1,0 +1,11 @@
+server:
+  port: 8090
+
+eureka:
+  instance:
+    host: localhost
+  client:
+    registerWithEureka: false # 设置该参数表示该模块是服务端
+    fetchRegistry: false # 同上
+    serviceUrl:
+      defaultZone: http://${eureka.instance.host}:${server.port}/eureka # 服务端地址

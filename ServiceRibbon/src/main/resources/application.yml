@@ -1,0 +1,11 @@
+server:
+  port: 8083 # Ribbon 端口号
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/ #Eureka 服务端地址
+
+spring:
+  application:
+    name: service-ribbon # Ribbon 名称

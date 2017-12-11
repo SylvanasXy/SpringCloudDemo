@@ -1,0 +1,24 @@
+server:
+  port: 8085  # zuul端口号
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/ # eureka服务端地址
+
+spring:
+  application:
+    name: service-zuul # zuul服务名称
+
+zuul:
+  routes:
+    api-ribbon: # "api-ribbon"名字随便起,只要不重复
+      # 当请求为 /ribbon/* 时,所有请求转发给 url指定地址 / spring.application.name = serviceId 消费服务去执行
+      path: /ribbon/**
+#      serviceId: service-ribbon # TODO: 这种方式暂时没测试通过,不知道原因,后面再试
+      # 通过url指定消费服务端地址,网上说这种方式会使 断路器(Hystrix)和负载均衡(LoadBalance)无效,想使其有效,需手动配置.参考链接: http://blog.csdn.net/fxq8866/article/details/77127330
+      url: http://localhost:8083/ribbon/
+    api-feign:
+      path: /feign/**
+#      serviceId: service-feign
+      url: http://localhost:8084/feign/

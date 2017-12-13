@@ -1,0 +1,17 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label:
+      server:
+        git:
+          uri: https://github.com/SylvanasXy/spring-cloud-demo/tree/master/ConfigServer/
+          searchPaths: src/main/java/com/demo/config/server
+          spring.cloud.config.label: master
+
+config:
+  testKey: helloWorld

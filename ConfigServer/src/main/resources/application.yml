@@ -1,13 +1,16 @@
 server:
   port: 8086
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/
+
 spring:
   application:
     name: config-server
   cloud:
     config:
-      # 配置仓库的分支
-      label: master
       server:
         git:
           # 配置git仓库的地址
@@ -17,3 +20,8 @@ spring:
           # 配置用户名和密码,有则需要配置,没有则不用配置该项
           # username: your username
           # password: your password
+      label: master
+
+
+
+

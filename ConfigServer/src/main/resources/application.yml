@@ -6,9 +6,16 @@ spring:
     name: config-server
   cloud:
     config:
-      label:
+      # 配置仓库的分支
+      label: master
       server:
         git:
-          uri: https://github.com/SylvanasXy/spring-cloud-demo/tree/master/ConfigServer/
-          searchPaths: src/main/java/com/demo/config/server
-          spring.cloud.config.label: master
+          # 配置git仓库的地址
+          uri: https://github.com/SylvanasXy/spring-cloud-demo/
+          # 配置仓库路径 即在该路径下存在 *.yml / *.properties 配置文件,假如配置文件放在项目根目录下,则不用配置该项
+          searchPaths: ConfigServer/src/main/resources
+          # 配置用户名和密码,有则需要配置,没有则不用配置该项
+          # username: your username
+          # password: your password
+
+config.server.test: helloWorld # 测试,看能否正常访问

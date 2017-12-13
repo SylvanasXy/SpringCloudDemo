@@ -1,0 +1,18 @@
+# bootstrap.yml文件会先于 application.yml文件启动
+
+server:
+  port: 8087
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      # 远程仓库的分支
+      label: master
+      # 配置文件后缀, dev: 开发环境配置文件, test: 测试环境配置文件, pro: 正式环境配置文件
+      profile: dev
+      # 指定ConfigServer的地址
+      uri: http://localhost:8086/
+      # 这是个大坑! 当项目启动报错,说@Value注解失败时,请指明配置文件名,不要profile后缀,比如下面的文件全名是"client-dev.yml"
+      name: client

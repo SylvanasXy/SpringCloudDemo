@@ -16,11 +16,10 @@ spring:
           # 配置git仓库的地址
           uri: https://github.com/SylvanasXy/spring-cloud-demo/
           # 配置仓库路径 即在该路径下存在 *.yml / *.properties 配置文件,假如配置文件放在项目根目录下,则不用配置该项
-          searchPaths: ConfigServer/src/main/resources
+          searchPaths: ConfigServer/src/main/resources/config*
           # 配置用户名和密码,有则需要配置,没有则不用配置该项
           # username: your username
           # password: your password
-      label: master
 
 
 

@@ -17,5 +17,3 @@ spring:
           # 配置用户名和密码,有则需要配置,没有则不用配置该项
           # username: your username
           # password: your password
-
-config.server.test: helloWorld # 测试,看能否正常访问

@@ -12,6 +12,3 @@ spring:
           uri: https://github.com/SylvanasXy/spring-cloud-demo/tree/master/ConfigServer/
           searchPaths: src/main/java/com/demo/config/server
           spring.cloud.config.label: master
-
-config:
-  testKey: helloWorld

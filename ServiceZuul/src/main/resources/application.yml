@@ -12,7 +12,8 @@ spring:
 
 zuul:
   routes:
-    api-ribbon: # "api-ribbon"名字随便起,只要不重复
+    # "api-ribbon"名字随便起,只要不重复
+    api-ribbon:
       # 当请求为 /ribbon/* 时,所有请求转发给 url指定地址 / spring.application.name = serviceId 消费服务去执行
       path: /ribbon/**
 #      serviceId: service-ribbon # TODO: 这种方式暂时没测试通过,不知道原因,后面再试

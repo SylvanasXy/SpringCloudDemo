@@ -3,6 +3,11 @@
 server:
   port: 8087
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8091/eureka/
+
 spring:
   application:
     name: config-client
@@ -10,9 +15,18 @@ spring:
     config:
       # 远程仓库的分支
       label: master
+
       # 配置文件后缀, dev: 开发环境配置文件, test: 测试环境配置文件, pro: 正式环境配置文件
       profile: dev
-      # 指定ConfigServer的地址
-      uri: http://localhost:8086/
-      # 这是个大坑! 当项目启动报错,说@Value注解失败时,请指明配置文件名,不要profile后缀,比如下面的文件全名是"client-dev.yml"
-      name: client
+      # 指定ConfigServer的地址,当配置中心使用分布式时,则不需要指定
+      # uri: http://localhost:8086/
+
+      # 这是个大坑! 当项目启动报错,说@Value注解失败时:
+      # 1.请检查是否有多个配置文件
+      # 2.检查配置文件中是否有重名属性,比如多个配置文件中都有"hi = 123",有的话请指明配置文件名, 指明时不要profile后缀,比如下面的文件全名是"client-dev.yml"
+      # name: client
+
+      # 当配置中心需要分布式时,则需要下面的配置,且上面的"uri"属性会无效
+      discovery:
+        enabled: true # 从配置中心读取文件
+        serviceId: config-server # 配置中心ConfigServer的ServiceId

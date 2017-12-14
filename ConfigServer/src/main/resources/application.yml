@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8090/eureka/
+      defaultZone: http://localhost:8091/eureka/
 
 spring:
   application:
@@ -17,8 +17,10 @@ spring:
         git:
           # 配置仓库git的地址
           uri: https://github.com/SylvanasXy/SpringCloudDemo-ConfigCenter/
+
           # 配置仓库的路径
           search-paths: config
+
           # 当git仓库为private时,且有username&password时则需要下面的配置,当为public仓库时,则无需指明username&password
           # username: your username
           # password: your password

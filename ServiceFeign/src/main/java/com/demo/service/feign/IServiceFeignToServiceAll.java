@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 如下所示,就是调用spring.application.name = service-all客户端的代码
  * @author xy
  */
-@FeignClient(value = "service-all", fallback = FeignHystrix.class)
-public interface IFeignToServiceAll {
+@FeignClient(value = "service-all", fallback = ServiceFeignHystrix.class)
+public interface IServiceFeignToServiceAll {
 
     /**
      * 在方法上加上 @RequestMapping 注解

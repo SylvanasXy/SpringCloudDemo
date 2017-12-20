@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
  * @author xy
  */
 @Service
-public class RibbonService {
+public class ServiceRibbonService {
 
     @Autowired
     RestTemplate restTemplate;

@@ -1,7 +1,7 @@
 # bootstrap.yml文件会先于 application.yml文件启动
 
 server:
-  port: 8087
+  port: 8086
 
 eureka:
   client:
@@ -31,7 +31,7 @@ spring:
       # 配置文件后缀, dev: 开发环境配置文件, test: 测试环境配置文件, pro: 正式环境配置文件
       profile: dev
       # 指定ConfigServer的地址,当配置中心使用分布式时,则不需要指定
-#      uri: http://localhost:8086/
+#      uri: http://localhost:8092/
 
       # 这是个大坑! 当项目启动报错,说@Value注解失败时:
       # 1.请检查是否有多个配置文件

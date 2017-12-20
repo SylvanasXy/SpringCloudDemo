@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/eureka/client")
-public class ClientController {
+public class EurekaClientController {
     @Value("${server.port}")
     private String port;
     @Value("${spring.application.name}")

@@ -9,6 +9,8 @@ eureka:
 spring:
   application:
     name: service-feign #Feign 名称
+  zipkin:
+    base-url: http://localhost:8093 # zipkin 服务端地址
 
 feign:
   hystrix:

@@ -1,5 +1,5 @@
 server:
-  port: 8080 # 客户端端口
+  port: 8081 # 客户端端口
 
 eureka:
   client:
@@ -10,3 +10,5 @@ spring:
   application:
 #    name: service-8080 #客户端名称 在服务端可以看见
     name: service-all #客户端名称 当多个客户端名称相同时,则可进行负载均衡
+  zipkin:
+    base-url: http://localhost:8093 # zipkin 服务端地址

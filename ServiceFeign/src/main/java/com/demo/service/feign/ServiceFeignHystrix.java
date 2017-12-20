@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author xy
  */
 @Component
-public class FeignHystrix implements IFeignToServiceAll {
+public class ServiceFeignHystrix implements IServiceFeignToServiceAll {
 
     @Override
     public String hiService(@RequestParam("name") String name) {
